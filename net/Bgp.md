@@ -1,72 +1,7 @@
-This documents provides steps to bring up contiv infrastructure in a L3 native vlan mode. 
 
-#What does L3 capabilty facilitate in a Contiv container infrastructure ?
-
--  Enable communication between containers on different hosts natively using vlan encap 
--  Enables communication between containers and non containers 
--  Provides capability for uplink TOR's/Leaf switches to learn containers deployed in the fabric
-
-#What are the recommended topologies ?
-
-![topo](https://cloud.githubusercontent.com/assets/784144/12862973/26d1136c-cc25-11e5-9451-a266ea033b5e.png)
-
-
-#Typical worklow:
-- Configure Bgp on the Leaf switches Leaf 1 and Leaf 2 
-- Bring up Contiv – netplugin and netmaster
-- Create a Vlan network with subnet pool and gateway
-- Add Bgp configuration on the host, to peer with the uplink leaf
-- Bring up containers in the networks created on the host
-
-#What are the supported configurations
-
-- Ensure that BGP peering between the host server and the leaf switch is eBGP
-- Currently only one uplink from the server is supported
-- Currently supported on bare-metals (watch this space for support on VMs soon)
-
-#Supported version
-
-This document would be applicable starting from the following version:
-
-```
-Version: v0.1-02-06-2016.14-42-05.UTC
-GitCommit: 392e0a7
-BuildTime: 02-06-2016.14-42-05.UTC
-```
-
-
-#Steps to bring up a demo cluster with routing capabilites:
+#Example showing how to use contiv in L3 mode:
 
 ![bgp](https://cloud.githubusercontent.com/assets/784144/12862804/17546052-cc24-11e5-9a17-277999761344.png)
-
-
-##STEP 0 : Provision the host nodes with required services
-
-Please follow the [prequesite] and [download] steps in the [demo installer] page. This would enable installation of all the required packages , versions of the binary that would be needed to bring up the contiv infrastrure services. At the end of these steps netplugin , netmaster would be started in routing mode. Once the prerequiste is completed please start the installer script. 
-
-```
-$chmod +x net_demo_installer
-$./net_demo_installer -l 
-```
-The net_demo_installer will create a cfg.yaml template file on the first run. 
-
-The [cfg.yaml] for the demo topology is as shown below.
-
-```
-CONNECTION_INFO:
-      172.29.205.224:
-        control: eth1
-        data: eth7
-      172.29.205.255:
-        control: eth1
-        data: eth6
-```
-Note: As shown in the topo diagram data interface should be the uplink interface and not the management interface of the server.
-
-Rerun the installer after filling up the cfg.yaml. 
-```
-./net_demo_installer -l 
-```
 
 ##STEP 1 : Configure the Switches to run BGP
 
