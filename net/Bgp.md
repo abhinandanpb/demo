@@ -1,6 +1,8 @@
 
 #Contiv in L3 mode
 
+This page contains the steps to use Contiv in L3 mode. Please follow the steps mentioned [here] for setup & installation process. 
+
 ![bgp](https://cloud.githubusercontent.com/assets/784144/12862804/17546052-cc24-11e5-9a17-277999761344.png)
 
 ##STEP 1 : Configure the Switches to run BGP
@@ -201,12 +203,8 @@ PING 80.1.1.2 (80.1.1.2) 56(84) bytes of data.
 
 For steps to apply policies supported in contiv networking. Please follow the steps in [Contiv Policies]
 
-
-[demo installer]: <https://github.com/contiv/demo/tree/master/net>
-[prequesite]: <https://github.com/contiv/demo/tree/master/net#pre-requisites>
-[download]: <https://github.com/contiv/demo/tree/master/net#step-1-download-the-installer-script>
-[cfg.yaml]: <https://github.com/contiv/demo/blob/master/net/extras/sample_cfg.yml>
 [Contiv Policies]: <http://contiv.github.io/docs/3_netplugin.html>
+[here]:<https://github.com/abhinandanpb/demo/blob/master/net/bgp_installation.md>
 
 
 
