@@ -30,3 +30,8 @@ Rerun the installer after filling up the cfg.yaml.
 ```
 ./net_demo_installer -l 
 ```
+
+[demo installer]: <https://github.com/contiv/demo/tree/master/net>
+[prequesite]: <https://github.com/contiv/demo/tree/master/net#pre-requisites>
+[download]: <https://github.com/contiv/demo/tree/master/net#step-1-download-the-installer-script>
+[cfg.yaml]: <https://github.com/contiv/demo/blob/master/net/extras/sample_cfg.yml>
