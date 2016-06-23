@@ -1,5 +1,5 @@
 
-#Example showing how to use contiv in L3 mode:
+#Contiv in L3 mode
 
 ![bgp](https://cloud.githubusercontent.com/assets/784144/12862804/17546052-cc24-11e5-9a17-277999761344.png)
 
