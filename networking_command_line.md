@@ -37,7 +37,26 @@
     ```netctl tenant inspect```is used to inspect a tenant.
 
 #Policy Manipulation
-    ```netctl policy``` command is used for policy manipulation like create, delete list and inspect
+    ```netctl policy``` command is used for policy manipulation like create, delete list,inspect , add rule , delete rule and list rules for the policy
+    ```netctl policy create``` is used to create a new policy to which rule manipulations can be 
+    ```netctl policy rm``` is used to delete a policy
+   ```netctl policy ls``` is used to list all the policies
+   ``` netctl rule-ls``` is used to list all the rules attached to a policy
+``` netctl rule-rm``` is used to remove a rule attached to a policy
+``` netctl rule-add``` is used to add a rule to a policy alone with the following supported options
+		```--priority, -p```  Priority Indicator . Default: 1
+		```--direction, -d``` Direction of traffic (in/out).Default: in
+		```--from-group, -g``` From Endpoint Group Name (Valid in incoming direction only)
+		```--to-group, -e```   To Endpoint Group Name (Valid in outgoing direction only)
+		```--from-network, -n``` From Network name (Valid in incoming direction only)
+		```--to-network, -o``` To Network name (Valid in outgoing direction only)
+				
+		```--from-ip-address, -i``` From IP address/CIDR (Valid in incoming direction only)
+		```--to-ip-address, -s``` To IP address/CIDR (Valid in outgoing direction only)
+		```--protocol, -l``` Protocol (e.g., tcp, udp, icmp)
+		```--port, -P``` Port
+		```--action, -j``` Action to take (allow or deny).Default:allow
+
     
 
 
